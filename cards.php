@@ -17,6 +17,10 @@ class Card {
     function __construct($image) {
         $this->image = $image;
     }
+
+    function echoHtml() {
+        echo "<div></div>";
+    }
 }
 
 $imgDirectory = "img";
