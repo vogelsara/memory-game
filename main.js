@@ -4,7 +4,7 @@ function loadPage() {
 }
 
 function initializeGame() {
-    fetch("/createCardList.php.php", {method: 'POST'});
+    fetch("/createCardList.php", {method: 'POST'});
 }
 
 function showEntireBoard() {

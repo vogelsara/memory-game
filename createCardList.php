@@ -35,6 +35,7 @@ function createCardList() {
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     createCardList();
+    echo json_encode(true);
 } else {
     http_response_code(400);
 }

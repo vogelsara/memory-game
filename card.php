@@ -1,3 +1,4 @@
+<?php
 class Card {
     private $image;
     private $shown;
@@ -7,3 +8,4 @@ class Card {
         $this->shown = false;
     }
 }
+?>
