@@ -2,6 +2,8 @@
 
 session_start();
 
+require('card.php');
+
 function nothidden($path) {
     $files = scandir($path);
     $nothidden = array();
@@ -11,16 +13,6 @@ function nothidden($path) {
         }
     }
     return $nothidden;
-}
-
-class Card {
-    private $image;
-    private $shown;
-
-    function __construct($image) {
-        $this->image = $image;
-        $this->shown = false;
-    }
 }
 
 $imgDirectory = "img";
