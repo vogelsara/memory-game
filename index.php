@@ -12,16 +12,6 @@
 <h1>Memory game</h1>
 <div class="cardContainer">
 
-<?php
-
-require('cards.php');
-
-foreach ($cards as $card) {
-    $card->echoHtml();
-}
-
-?>
-
 </div>
 
 </body>

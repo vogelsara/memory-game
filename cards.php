@@ -17,10 +17,6 @@ class Card {
     function __construct($image) {
         $this->image = $image;
     }
-
-    function echoHtml() {
-        echo "<div class=\"memoryCard\"></div>";
-    }
 }
 
 $imgDirectory = "img";

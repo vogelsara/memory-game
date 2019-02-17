@@ -24,13 +24,17 @@ h1 {
     flex-wrap: wrap;
 }
 
-.memoryCard {
+.memoryCardBack {
     height: 9em;
     width: 9em;
     margin: 1em;
     background-color: darkblue;
     border-radius: 20%;
     position: relative;
+}
+
+.memoryCardFront {
+    
 }
 
 .dayNumber {
