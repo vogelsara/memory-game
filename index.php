@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Memory game</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="main.js"></script>
 </head>
 <body>
 
