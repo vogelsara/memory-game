@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 function nothidden($path) {
     $files = scandir($path);
     $nothidden = array();
@@ -13,9 +15,11 @@ function nothidden($path) {
 
 class Card {
     private $image;
+    private $shown;
 
     function __construct($image) {
         $this->image = $image;
+        $this->shown = false;
     }
 }
 
