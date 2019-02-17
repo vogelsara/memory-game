@@ -33,6 +33,10 @@ function createCardList() {
     
 }
 
-
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    createCardList();
+} else {
+    http_response_code(400);
+}
 
 ?>
