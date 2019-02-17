@@ -35,4 +35,6 @@ foreach ($listOfImgs as $img) {
 
 shuffle($cards);
 
+$_SESSION["cardList"] = serialize($cards);
+
 ?>
