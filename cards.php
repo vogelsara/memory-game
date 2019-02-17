@@ -15,18 +15,24 @@ function nothidden($path) {
     return $nothidden;
 }
 
-$imgDirectory = "img";
-$listOfImgs = nothidden($imgDirectory);
+function createCardList() {
 
-$cards = array();
-
-foreach ($listOfImgs as $img) {
-    array_push($cards, new Card($img));
-    array_push($cards, new Card($img));
+    $imgDirectory = "img";
+    $listOfImgs = nothidden($imgDirectory);
+    
+    $cards = array();
+    
+    foreach ($listOfImgs as $img) {
+        array_push($cards, new Card($img));
+        array_push($cards, new Card($img));
+    }
+    
+    shuffle($cards);
+    
+    $_SESSION["cardList"] = serialize($cards);
+    
 }
 
-shuffle($cards);
 
-$_SESSION["cardList"] = serialize($cards);
 
 ?>
