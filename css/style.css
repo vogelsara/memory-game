@@ -1,0 +1,46 @@
+
+body {
+    background-image: url("../img/background.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+}
+
+h1 {
+    font-family: 'Mountains of Christmas';
+    font-weight: 700;
+    color: darkslategrey;
+    text-align: center;
+    font-size: 6em;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.calendarContainer {
+    width: 100vw;
+    display: flex;
+    align-content: space-around;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.calendarDay {
+    height: 9em;
+    width: 9em;
+    margin: 1em;
+    background-image: url("./img/surprise.gif");
+    background-size: cover;
+    border-radius: 20%;
+    position: relative;
+}
+
+.dayNumber {
+    font-family: 'Mountains of Christmas';
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: darkslategrey;
+}

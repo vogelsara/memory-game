@@ -7,6 +7,21 @@
     <title>Memory game</title>
 </head>
 <body>
-    
+
+<h1>Memory game</h1>
+<div class="calendarContainer">
+
+<?php
+
+require('cards.php');
+
+foreach ($cards as $card) {
+    $card->echoHtml();
+}
+
+?>
+
+</div>
+
 </body>
 </html>
