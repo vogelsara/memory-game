@@ -19,7 +19,7 @@ class Card {
     }
 
     function echoHtml() {
-        echo "<div></div>";
+        echo "<div class=\"memoryCard\"></div>";
     }
 }
 
