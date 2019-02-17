@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="main.js"></script>
 </head>
-<body>
+<body onload="loadPage()">
 
 <h1>Memory game</h1>
 <div class="cardContainer">
