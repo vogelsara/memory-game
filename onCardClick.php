@@ -6,6 +6,9 @@ function onClick($id) {
     $serializedCardList = $_SESSION["cardList"];
     $cardList = unserialize($serializedCardList);
 
+    if ($cardList[$id]->isHidden()) {
+        
+    }
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

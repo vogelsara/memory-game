@@ -7,5 +7,9 @@ class Card {
         $this->image = $image;
         $this->shown = false;
     }
+
+    function isHidden() {
+        return (!$this->shown);
+    }
 }
 ?>
