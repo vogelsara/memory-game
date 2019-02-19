@@ -2,13 +2,15 @@
 
 session_start();
 
+require("card.php");
+
 function onClick($id) {
     $serializedCardList = $_SESSION["cardList"];
     $cardList = unserialize($serializedCardList);
     $changedCards = array();
 
     if ($cardList[$id]->isHidden()) {
-        $changedCards = addCard($id);
+        $changedCards = addCard($id, $cardList);
     }
 
     return $changedCards;
@@ -38,14 +40,16 @@ function addCard($addedCardNumber, &$cardList) {
 
         if ($onlyActiveCard->getImage() == $addedCard->getImage()) {
             $activeCardNumbers = array();
+        } else {
+            array_push($activeCardNumbers, $addedCardNumber);
         }
 
     } else {
 
-        array_push($activeCardNumbers, $addedCard);
+        array_push($activeCardNumbers, $addedCardNumber);
 
     }
-    $_SESSION["activeCardNumbers"] = serialize($activeCards);
+    $_SESSION["activeCardNumbers"] = serialize($activeCardNumbers);
     return $changedCards;
 }
 

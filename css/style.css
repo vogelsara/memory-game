@@ -27,13 +27,9 @@ h1 {
     height: 9em;
     width: 9em;
     margin: 1em;
-    background-color: darkblue;
+    background-size: cover;
     border-radius: 20%;
     position: relative;
-}
-
-.memoryCardFront {
-    
 }
 
 .dayNumber {

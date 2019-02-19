@@ -20,8 +20,10 @@ function showEntireBoard() {
             for(var i = 1; i <= numberOfCards; i++) {
                 
                 var cardDiv = document.createElement("div")
-                cardDiv.setAttribute('index', i)
+                cardDiv.id = "n" + i;
                 cardDiv.setAttribute('onclick', 'onCardClick(this)')
+                
+                cardDiv.style.backgroundColor = '#bccce5';
         
                 cardDiv.className = "memoryCardBack"
                 container.appendChild(cardDiv)
@@ -35,11 +37,33 @@ function onCardClick(card) {
 
     var formData = new FormData();
 
-    formData.append('id', 24);
+    var idNumber = card.id.substr(1);
+
+    formData.append('id', idNumber);
 
     fetch("/onCardClick.php", {
         method: 'POST',
         credentials: 'include',
         body: formData
+    }).then((response) => response.json())
+    .then((changedCards) => {
+        if (changedCards) {
+            var changedCardIds = Object.keys(changedCards)
+            for(var i = 0; i < changedCardIds.length; i++) {
+                var changedCard = document.getElementById("n" + changedCardIds[i])
+                if (changedCards[changedCardIds[i]] == "") {
+
+                    changedCard.style.backgroundColor = '#bccce5';
+                    changedCard.style.backgroundImage = "none";
+
+                } else {
+
+                    changedCard.style.transition = "all 2s ease"
+                    changedCard.style.backgroundImage = "url('./img/" + changedCards[changedCardIds[i]] + "')";
+                    changedCard.style.backgroundSize = "cover"
+
+                }
+            }
+        }
     });
 }
