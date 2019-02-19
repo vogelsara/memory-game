@@ -9,16 +9,15 @@ function initializeGame() {
 
 function showEntireBoard() {
 
-    fetch("/getCardList.php", {
+    fetch("/getNumberOfCards.php", {
         method: 'POST'
     }).then((response) => response.json())
-    .then((cardListJson) => {
-        if (cardListJson) {
+    .then((numberOfCards) => {
+        if (numberOfCards) {
+
             var container = document.getElementsByClassName("cardContainer")[0]
 
-            var n = cardListJson.length;
-
-            for(var i = 1; i <= n; i++) {
+            for(var i = 1; i <= numberOfCards; i++) {
                 
                 var cardDiv = document.createElement("div")
                 cardDiv.setAttribute('index', i)
@@ -33,5 +32,14 @@ function showEntireBoard() {
 }
 
 function onCardClick(card) {
-    
+
+    var formData = new FormData();
+
+    formData.append('id', 24);
+
+    fetch("/onCardClick.php", {
+        method: 'POST',
+        credentials: 'include',
+        body: formData
+    });
 }
