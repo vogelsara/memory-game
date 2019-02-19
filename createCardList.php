@@ -19,15 +19,21 @@ function createCardList() {
 
     $imgDirectory = "img";
     $listOfImgs = nothidden($imgDirectory);
+
+    $n = count($listOfImgs);
     
+    $numbers = range(1, 2*$n);
+
+    shuffle($numbers);
+
     $cards = array();
     
-    foreach ($listOfImgs as $img) {
-        array_push($cards, new Card($img));
-        array_push($cards, new Card($img));
+    for ($i = 0; $i < $n; $i++) {
+        $cards[$numbers[$i]] = new Card($listOfImgs[$i]);
+        $cards[$numbers[$i+$n]] = new Card($listOfImgs[$i]);
     }
     
-    shuffle($cards);
+    sort($cards);
     
     $_SESSION["cardList"] = serialize($cards);
     
