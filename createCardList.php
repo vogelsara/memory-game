@@ -36,6 +36,7 @@ function createCardList() {
     sort($cards);
     
     $_SESSION["cardList"] = serialize($cards);
+    $_SESSION["activeCardNumbers"] = serialize(array());
     
 }
 
